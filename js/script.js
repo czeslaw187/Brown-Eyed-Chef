@@ -20,6 +20,7 @@ const services = new ServicesUs()
 const contact = new ContactUs()
 const signUp = new SignUp()
 const login = new Login()
+
 let contentArray = [
     homePage.displayHome(),
     aboutUs.displayAboutUs(), 
@@ -37,11 +38,12 @@ const carousel = new Carousel()
 // render header and main page
 let imgArr = ['./images/bbq1.jpg', './images/bbq2.jpg', './images/bbq3.jpg'] // slideshow pic array
 
-$('#slideShow').html(carousel.displaySlideshow(imgArr))
-$('#navbar').html(head.displayHeader())
-$('#mainContent').html(carousel.displayCarousel(contentArray))
+$('#slideShow').html(carousel.displaySlideshow(imgArr)) //slide show page top
+$('#navbar').html(head.displayHeader()) // render navbar
+$('#mainContent').html(carousel.displayCarousel(contentArray)) // render main content
+$('title').html(`Black Eyed Chef - Home`) // set page title to 'Home'
 
-// navigation logics
+// navigation buttons logics
 $('#menuList li a').on('click', (e)=> {
     $('#menuList li a').removeClass('active-page');
     $(e.target).addClass('active-page')
@@ -78,7 +80,7 @@ $('#pageCarousel').on('slid.bs.carousel', ()=> {
         let navIndex = $('#pageCarousel .active').index()
         $('#menuList li a').removeClass('active-page')
         $('#menuList li a').eq(navIndex).addClass('active-page')
-    
-        
+        let pageTitle = $('#menuList li a').eq(navIndex).html()
+        $('title').html(`Black Eyed Chef - ${pageTitle}`)        
     }
 })
