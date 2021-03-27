@@ -1,0 +1,44 @@
+
+#menuList ul li a:hover {
+    color: yellow !important;
+}
+
+#menuList ul li a {
+    opacity: 0.8;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+.active-page {
+    color: rgb(248, 248, 104) !important;
+    text-decoration: underline !important;
+}
+
+@media only screen and (max-width: 990px) {
+    #menuList {
+        background-color: black !important;
+    }
+}
+
+#main {
+    background-image: url('../images/black\ background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#navbar {
+    background-image: url('../images/bricksBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mainContent p, h2 {
+    color:honeydew;
+    margin: 4rem 4rem 0 0;
+}
+
+div#navbar {
+    border-radius: 10px;
+}
+
